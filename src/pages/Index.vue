@@ -6,8 +6,13 @@
 
    <h5 v-if="message.length" class="border-black">{{message}}</h5>
    <h6 v-else>tidak ada tulisan </h6>
+    <p> {{uppercaseMessage()}}</p>
+
+
+
+
    <button @click="message= ''"> hapus </button> 
-   <button @click=" clearMessage= ''"> clear dengan fungsi </button>
+   <button @click="clearMessage= ''"> clear dengan fungsi </button>
 
   
 
@@ -24,18 +29,23 @@ export default
     }
   },
 
-  methods: {
-  clearMessage(){
-  this.message=''
-  },
-    handleKeyup(e) {
-      if (e.keyCode == 27){
-        this.message ='ESC'
-      }
-    }
+methods: {
+  clearMessage(){ 
+    this.message =''
+},
+
+  handleKeyup(e){
+    if(e.keyCode==27){
+      this.message='ESC'
+  } else if(e.keyCode==13){
+      this.message='ENTER'
   }
-  
-  
+},
+uppercaseMessage(){
+  return this.message.toUpperCase()
+}
+
+}
 }
 </script>
 
