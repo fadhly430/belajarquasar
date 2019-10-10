@@ -9,15 +9,22 @@
     <p> {{uppercaseMessage()}}</p>
 
 
-
-
    <button @click="message= ''"> hapus </button> 
    <button @click="clearMessage= ''"> clear dengan fungsi </button>
 
+
+<ul>
+<li v-for="item in tasks" :key="item.name">
+<div>{{item.name}}</div>
+<small> due {{item.due_date}}
+        at {{item.due_time}}
+</small>
+</li>
+</ul>
   
 
-  </div>
-  </q-page>
+</div>
+</q-page>
 </template>
 
 <script>
@@ -25,6 +32,17 @@ export default
 {
   data() {
     return {
+      tasks: [{
+  name: "Go to shop",
+  due_date: "2019/02/12",
+  due_time: "18:09"
+},
+{
+  name: "set some froits",
+  due_date: "2019/02/13",
+  due_time: "17:00"
+}
+],
       message: 'mau apa ? '
     }
   },
@@ -41,6 +59,8 @@ methods: {
       this.message='ENTER'
   }
 },
+
+
 uppercaseMessage(){
   return this.message.toUpperCase()
 }
