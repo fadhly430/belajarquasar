@@ -77,57 +77,9 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-black-2"
-    >
+ 
     <template>
-  <div class="q-pa-md" style="max-width: 350px">
-    <q-list bordered class="rounded-borders">
-      <q-expansion-item
-        expand-icon-toggle
-        expand-separator
-        icon="perm_identity"
-        label="Account settings"
-        caption="John Doe"
-      >
-        <q-card>
-          <q-card-section>
-            masih kosong akunnya
-          </q-card-section>
-        </q-card>
-      </q-expansion-item>
-
-      <q-expansion-item
-        expand-icon-toggle
-        expand-separator
-        icon="signal_wifi_off"
-        label="Wifi settings"
-      >
-        <q-card>
-          <q-card-section>
-            masih kosong
-          </q-card-section>
-        </q-card>
-      </q-expansion-item>
-
-      <q-expansion-item
-        expand-icon-toggle
-        expand-separator
-        icon="drafts"
-        label="Drafts"
-        header-class="text-purple"
-      >
-        <q-card>
-          <q-card-section>
-            masih kasong
-          </q-card-section>
-        </q-card>
-      </q-expansion-item>
-    </q-list>
-  </div>
+ 
 </template>
   
     </q-drawer>

@@ -29,7 +29,7 @@
         ]"
       />
       <div>
-        <q-btn label="Submit" type="submit" color="info"/>
+        <q-btn label="Masuk" type="submit" color="info"/>
         <!--q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" /-->
         <hr>
         <div>{{username}}</div>
