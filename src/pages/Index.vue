@@ -1,72 +1,75 @@
 <template>
-  <q-page class="q-pa-md">
-  <div class="q-gutter-md">
-  <input v-model="message" @keyup = "handleKeyup"/>
-  <h1>{{message}}</h1>
-
-   <h5 v-if="message.length" class="border-black">{{message}}</h5>
-   <h6 v-else>tidak ada tulisan </h6>
-    <p> {{uppercaseMessage()}}</p>
-
-
-   <button @click="message= ''"> hapus </button> 
-   <button @click="clearMessage= ''"> clear dengan fungsi </button>
-
-
-<ul>
-<li v-for="item in tasks" :key="item.name">
-<div>{{item.name}}</div>
-<small> due {{item.due_date}}
-        at {{item.due_time}}
-</small>
-</li>
-</ul>
-  
-
-</div>
-</q-page>
+  <div class="q-pa-md">
+    <q-table
+      :data="employees"
+      :columns="columns"
+      row-key="name"
+    />
+  </div>
 </template>
 
 <script>
-export default 
-{
-  data() {
+import axios from 'axios'
+export default {
+  data () {
     return {
-      tasks: [{
-  name: "Go to shop",
-  due_date: "2019/02/12",
-  due_time: "18:09"
-},
-{
-  name: "set some froits",
-  due_date: "2019/02/13",
-  due_time: "17:00"
-}
-],
-      message: 'mau apa ? '
+      columns: [
+        {
+          name: 'name',
+          required: true,
+          label: 'Nama',
+          align: 'left',
+          field: row => row.nama,
+          format: val => `${val}`,
+          sortable: true,
+          classes: 'bg-grey-2 ellipsis',
+          style: 'max-width: 100px'
+        },
+        {
+          name: 'jenis_kelamin',
+          required: true,
+          label: 'Jenis Kelamin',
+          align: 'left',
+          field: row => row.jeniskelamin,
+          format: val => `${val}`,
+          sortable: true,
+          classes: 'bg-grey-2 ellipsis',
+          style: 'max-width: 100px'
+        },
+        {
+          name: 'tanggallahir',
+          required: true,
+          label: 'Tanggal Lahir',
+          align: 'left',
+          field: row => row.tanggallahir,
+          format: val => `${val}`,
+          sortable: true,
+          classes: 'bg-grey-2 ellipsis',
+          style: 'max-width: 100px'
+        },
+        {
+          name: 'status',
+          required: true,
+          label: 'Status',
+          align: 'left',
+          field: row => row.status,
+          format: val => `${val}`,
+          sortable: true,
+          classes: 'bg-grey-2 ellipsis',
+          style: 'max-width: 100px'
+        }
+        
+         ],
+      employees: [
+        {
+         
+        }
+      ]
     }
   },
-
-methods: {
-  clearMessage(){ 
-    this.message =''
-},
-
-  handleKeyup(e){
-    if(e.keyCode==27){
-      this.message='ESC'
-  } else if(e.keyCode==13){
-      this.message='ENTER'
+  async mounted(){
+    const response = await axios.get('http://localhost:3000/api/Employees')
+    this.employees=response.data
   }
-},
-
-
-uppercaseMessage(){
-  return this.message.toUpperCase()
-}
-
-}
 }
 </script>
-
-

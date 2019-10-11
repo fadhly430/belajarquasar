@@ -14,8 +14,7 @@
   <div class="q-pa-md">
     <div class="q-gutter-md row">
 
-    
-
+  
            <q-btn color="" label="TSAQOFAH ISLAMIYAH">
         <q-menu content-class="text-black" auto-close>
           <q-list style="min-width: 100px">
@@ -40,7 +39,6 @@
               <q-item-section>Kumpulan Do'a</q-item-section>
             </q-item>
             <q-separator dark />
-            
           </q-list>
         </q-menu>
       </q-btn>
