@@ -2,14 +2,7 @@
   <q-layout view="lHh tre lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          icon="menu"
-          aria-label="Menu"
-        />
+        
         <template>
   <div class="q-pa-md">
     <div class="q-gutter-md row">
