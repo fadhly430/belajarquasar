@@ -4,11 +4,12 @@ const routes = [
     path: '/',
     component: () => import('layouts/MyLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') },
-      { path: 'login', component: () => import('pages/login.vue') },
+      { path: 'index', component: () => import('pages/Index.vue') },
+      { path: '', component: () => import('pages/login.vue') },
       { path: 'tambah', component: () => import('pages/tambah.vue') },
       { path: 'tambahemployee', component: () => import('pages/tambahemployee.vue') },
-      { path: 'inputusers', component: () => import('pages/inputusers.vue') }
+      { path: 'inputusers', component: () => import('pages/inputusers.vue') },
+      { path: 'users', component: () => import('pages/users.vue') }
      
     ]
   }
