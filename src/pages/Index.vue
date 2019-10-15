@@ -88,4 +88,6 @@ export default {
     }
   }
 }
-</script>
+</script><script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.13/vue.min.js"></script>
+
+
