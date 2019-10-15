@@ -28,7 +28,7 @@
         ]"
       />
       <div>
-        <q-btn label="Submit" type="submit" color="info"/>
+        <q-btn label="Login" type="submit" color="primary" flat class="q-ml-sm"/>
         <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
         <hr>
         <div>{{username}}</div>

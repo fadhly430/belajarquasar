@@ -30,7 +30,7 @@
       />
       <div>
 
-        <q-btn label="Masuk" type="submit" color="info"/>
+        <q-btn label="Masuk" type="submit" color="primary" flat class="q-ml-sm"/>
         <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
 
         <hr>

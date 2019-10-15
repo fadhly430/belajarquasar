@@ -72,7 +72,7 @@
 
 
         <div>
-          <q-btn label="DAFTAR" type="submit" color="black"/>
+          <q-btn label="DAFTAR" type="submit" color="primary" flat class="q-ml-sm"/>
           
         </div>
       </q-form>
