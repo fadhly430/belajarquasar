@@ -45,7 +45,8 @@ module.exports = function (ctx) {
       components: [
         'QDialog',
         'QAjaxBar',
-        'QVideo'
+        'QVideo',
+        'QTooltip'
       ],
       directives: [
         'ClosePopup'

@@ -11,7 +11,7 @@
       <q-drawer
         v-model="drawer"
         show-if-above
-        :width="200"
+        :width="20"
         :breakpoint="700"
       >
         <q-scroll-area style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd">
@@ -88,6 +88,4 @@ export default {
     }
   }
 }
-</script><script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.13/vue.min.js"></script>
-
-
+</script>

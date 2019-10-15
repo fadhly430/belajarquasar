@@ -34,8 +34,7 @@
         <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
 
         <hr>
-        <div>{{username}}</div>
-        <div>{{password}}</div>
+        
       </div>
 
     </q-form>

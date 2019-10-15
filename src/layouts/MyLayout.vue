@@ -8,6 +8,9 @@
     <div class="q-gutter-md row">
 <div class="q-pa-md q-gutter-sm">
     <q-btn label="REGISTRASI" color="primary" @click="layout = true" />
+    <q-tooltip content-class="" :offset="[10, 10]">
+          Silahkan menjadi member kami!
+        </q-tooltip>
     <q-dialog v-model="layout">
       <q-layout view="Lhh lpR fff" container class="bg-white">
         <q-header class="bg-primary">
@@ -97,6 +100,9 @@
     <div class="q-gutter-md row">
 <div class="q-pa-md q-gutter-sm">
     <q-btn label="DZIKIR PAGI" color="primary" @click="layout1 = true" />
+     <q-tooltip content-class="" :offset="[10, 10]">
+          Bacaan dzikir diwaktu pagi
+        </q-tooltip>
     <q-dialog v-model="layout1">
       <q-layout view="Lhh lpR fff" container class="bg-white">
         <q-header class="bg-primary">
@@ -398,6 +404,9 @@ Catatan: Dzikir ini hanya dibaca di pagi hari. Riwayat yang menyatakan dibaca ju
     <div class="q-gutter-md row">
 <div class="q-pa-md q-gutter-sm">
     <q-btn label="DZIKIR PETANG" color="primary" @click="layout2 = true" />
+     <q-tooltip content-class="" :offset="[10, 10]">
+          Bacaan dzikir diwaktu petang
+        </q-tooltip>
     <q-dialog v-model="layout2">
       <q-layout view="Lhh lpR fff" container class="bg-white">
         <q-header class="bg-primary">
