@@ -668,6 +668,43 @@ Membaca&nbsp;<em style="box-sizing: border-box;">Sayyidul Istighfar</em></div>
     </div>
   </div>
 
+  <div class="q-pa-md">
+    <div class="q-gutter-md row">
+<div class="q-pa-md q-gutter-sm">
+    <q-btn label="DAFTAR MEMBER" color="primary" @click="layout3 = true" />
+    <q-dialog v-model="layout3">
+      <q-layout view="Lhh lpR fff" container class="bg-white">
+        <q-header class="bg-primary">
+          <q-toolbar>
+            <q-toolbar-title>Daftar Peserta</q-toolbar-title>
+            <q-btn flat v-close-popup round dense icon="close" />
+          </q-toolbar>
+        </q-header>
+        <q-page-container>
+          <q-page padding>
+
+<div class="q-pa-md">
+    <q-table
+      :data="employees"
+      :columns="columns"
+      row-key="name"
+    />
+  </div>
+
+
+           
+
+
+   </p>
+          </q-page>
+        </q-page-container>
+      </q-layout>
+    </q-dialog>
+  </div>
+   </div>
+  </div>
+
+
 
 
 </template>
@@ -700,6 +737,8 @@ export default {
   name: 'MyLayout',
   data () {
     return {
+ 
+
     sername : "",
     jeniskelamin : "",
     email : "",
@@ -707,7 +746,8 @@ export default {
 
       layout: false,
       layout1: false,
-      layout2: false
+      layout2: false,
+      layout3: false
   
     }
   },
@@ -732,5 +772,7 @@ export default {
     });
     }
   }
+
+ 
 }
 </script>
