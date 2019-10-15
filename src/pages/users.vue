@@ -32,7 +32,7 @@
 
         <q-btn label="Masuk" type="submit" color="info"/>
         <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-        
+
         <hr>
         <div>{{username}}</div>
         <div>{{password}}</div>
@@ -71,7 +71,7 @@ export default {
                 .then(function (result){
                     console.log(result)
                     if (result){
-                        self.$router.push("/");
+                        self.$router.push("/index");
                     }
 
                 })

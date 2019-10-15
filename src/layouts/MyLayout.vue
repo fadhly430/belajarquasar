@@ -683,16 +683,16 @@ Membaca&nbsp;<em style="box-sizing: border-box;">Sayyidul Istighfar</em></div>
         <q-page-container>
           <q-page padding>
 
-<div class="q-pa-md">
+            <template>
+  <div class="q-pa-md">
     <q-table
       :data="employees"
       :columns="columns"
       row-key="name"
     />
   </div>
+</template>
 
-
-           
 
 
    </p>
@@ -737,8 +737,6 @@ export default {
   name: 'MyLayout',
   data () {
     return {
- 
-
     sername : "",
     jeniskelamin : "",
     email : "",
@@ -772,7 +770,5 @@ export default {
     });
     }
   }
-
- 
 }
 </script>

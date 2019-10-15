@@ -1,5 +1,5 @@
 <template>
-  <div id = "form" class="q-pa-md" style="max-width: 400px">
+  <div id = "form" class="q-pa-md " style="max-width: 400px">
       
     <q-form
       @submit="onSubmit"
@@ -23,14 +23,13 @@
         hint="Input your password"
         lazy-rules
         :rules="[
-
           val => val !== null && val !== '' || 'Please type your password',
       
         ]"
       />
       <div>
-        <q-btn label="Masuk" type="submit" color="info"/>
-        <!--q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" /-->
+        <q-btn label="Submit" type="submit" color="info"/>
+        <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
         <hr>
         <div>{{username}}</div>
         <div>{{password}}</div>
@@ -40,13 +39,12 @@
 
   </div>
 </template>
-<style scoped>
 
+<style scoped>
 #form{
     margin-left: 30%;
     margin-top: 10%;
 }
-
 </style>
 
 <script>
@@ -58,27 +56,22 @@ export default {
             password: ""
         }
     },
-
     methods : {
-
         onSubmit(){
             let self = this;
-
             login_api
                 .userlogin(window, self.username, self.password)
                 .then(function (result){
                     console.log(result)
                     if (result){
-                        self.$router.push("/");
+                        self.$router.push("/index");
                     }
-
                 })
                 .catch(function(err) {
                     console.log(err);
                 });
         }
     }
-
     
 }
 </script>
