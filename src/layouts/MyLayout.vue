@@ -8,33 +8,31 @@
     <div class="q-gutter-md row">
 
   
-           <q-btn color="" label="TSAQOFAH ISLAMIYAH">
-        <q-menu content-class="text-black" auto-close>
-          <q-list style="min-width: 100px">
-            <q-item clickable>
-              <q-item-section>Rukun Islam</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section>Rukun Iman</q-item-section>
-            </q-item>
-            <q-separator dark />
-            <q-item clickable>
-              <q-item-section>Imam Madzhab</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section>Hadits-Hadits</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section>Amalan Sunnah</q-item-section>
-            </q-item>
-            <q-separator dark />
-            <q-item clickable>
-              <q-item-section>Kumpulan Do'a</q-item-section>
-            </q-item>
-            <q-separator dark />
-          </q-list>
-        </q-menu>
-      </q-btn>
+           <template>
+  <div class="q-pa-md q-gutter-sm">
+    <q-btn label="REGISTRASI" color="primary" @click="layout = true" />
+
+    <q-dialog v-model="layout">
+      <q-layout view="Lhh lpR fff" container class="bg-white">
+        <q-header class="bg-primary">
+          <q-toolbar>
+          
+            <q-toolbar-title>PENDAFTARAN</q-toolbar-title>
+            <q-btn flat v-close-popup round dense icon="close" />
+          </q-toolbar>
+        </q-header>
+
+        <q-page-container>
+          <q-page padding>
+            <p v-for="n in contentSize" :key="n">
+              {{ lorem }}
+            </p>
+          </q-page>
+        </q-page-container>
+      </q-layout>
+    </q-dialog>
+  </div>
+</template>
          
          <q-btn color="" label="AL-QUR'AN ">
         <q-menu content-class=" text-black" auto-close>
@@ -95,6 +93,11 @@ export default {
   name: 'MyLayout',
   data () {
     return {
+      layout: false,
+
+      moreContent: true,
+      drawer: false,
+      drawerR: false,
       leftDrawerOpen: false
     }
   }
