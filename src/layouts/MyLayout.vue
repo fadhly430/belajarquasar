@@ -33,6 +33,7 @@
       > 
         <q-input
           filled
+          type="username"
           v-model="username"
           label="Username*"
           lazy-rules
