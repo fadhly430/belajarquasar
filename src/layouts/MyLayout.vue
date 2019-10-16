@@ -36,7 +36,9 @@
           v-model="username"
           label="Username*"
           lazy-rules
-          :rules="[ val => val && val.length > 0 || '']"
+          :rules="[
+           val => val !== null && val !== '' || '',
+           ]"
         />
 
         <q-input
