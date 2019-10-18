@@ -10,7 +10,8 @@ const routes = [
       { path: 'tambahemployee', component: () => import('pages/tambahemployee.vue') },
       { path: 'inputusers', component: () => import('pages/inputusers.vue') },
       { path: 'users', component: () => import('pages/users.vue') },
-      { path: 'video', component: () => import('pages/video.vue') }
+      { path: 'video', component: () => import('pages/video.vue') },
+      { path: 'tabel', component: () => import('pages/tabel.vue') }
      
     ]
   }
