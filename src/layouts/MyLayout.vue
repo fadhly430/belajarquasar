@@ -689,6 +689,15 @@ Membaca&nbsp;<em style="box-sizing: border-box;">Sayyidul Istighfar</em></div>
    </div>
   </div>
 
+  <div class="q-pa-md">
+    <div class="q-gutter-md row">
+<div class="q-pa-md q-gutter-sm">
+    <q-btn label="EDIT MEMBER" color="primary" @click="navigate1()" />
+    
+  </div>
+   </div>
+  </div>
+
 
 
 
@@ -739,6 +748,10 @@ export default {
 
     navigate() {
       this.$router.push('/tabel2')
+    },
+
+    navigate1() {
+      this.$router.push('/tabel')
     },
 
     
