@@ -2,69 +2,78 @@
   <div class="q-pa-md">
       <q-btn label="TAMBAH PESERTA" color="primary" @click="navigate()" />
     
-    <q-table
-      title="data peserta"
-      :data="employees"
-      :columns="columns"
-      row-key="name"
-    />
+   <q-list bordered class="rounded-borders" style="max-width: 600px" >
+      <q-item-label header>Google Inbox style</q-item-label>
+        <!-- awal -->
+        <q-item >
+    
+          <q-item-section top class="col-2 gt-sm">
+          <q-item-label class="q-mt-sm">nama</q-item-label>
+        </q-item-section>
+
+        <q-item-section top class="col-2 gt-sm">
+          <q-item-label class="q-mt-sm">jenis kelamin</q-item-label>
+        </q-item-section>
+
+        <q-item-section top class="col-2 gt-sm">
+          <q-item-label class="q-mt-sm">tanggal lahir
+          </q-item-label>
+        </q-item-section>
+
+         <q-item-section top class="col-2 gt-sm">
+          <q-item-label class="q-mt-sm">status
+          </q-item-label>
+        </q-item-section>
+
+        <q-item-section top class="flex-flex-center">
+          <q-item-label class="q-mt-sm"> Aksi
+          </q-item-label>
+        </q-item-section>
+
+      </q-item>
+        
+        <!-- Tabel -->
+      <q-item v-for="emp in employees" :key="emp.id">
+       
+
+        <q-item-section top class="col-2 gt-sm">
+          <q-item-label class="q-mt-sm">{{emp.nama}}</q-item-label>
+        </q-item-section>
+
+        
+          <q-item-section top class="col-2 gt-sm">
+          <q-item-label class="q-mt-sm">{{emp.jeniskelamin}}</q-item-label>
+        </q-item-section>
+
+
+          <q-item-section top class="col-2 gt-sm">
+          <q-item-label class="q-mt-sm">{{emp.tanggallahir}}</q-item-label>
+        </q-item-section>
+
+             <q-item-section top class="col-2 gt-sm">
+          <q-item-label class="q-mt-sm">{{emp.status}}</q-item-label>
+        </q-item-section>
+
+        <q-item-section top side>
+          <div class="text-grey-8 q-gutter-xs">
+            <q-btn class="gt-xs" size="12px" flat dense round icon="edit" @click="onUpdate(emp)"/>
+            <q-btn class="gt-xs" size="12px" flat dense round icon="delete" @click="onDelete(emp.id)" />
+            <q-btn size="12px" flat dense round icon="more_vert" />
+          </div>
+        </q-item-section>
+      </q-item>
+    </q-list>
   </div>
 
   
 </template>
+
 <script>
 import tabele from '../api/get/index'
 export default {
   data () {
     return {
-      columns: [
-        {
-          name: 'nama',
-          required: true,
-          label: 'nama',
-          align: 'left',
-          field: row => row.nama,
-          format: val => `${val}`,
-          sortable: true,
-          classes: 'bg-grey-2 ellipsis',
-          style: 'max-width: 100px'
-        },
-        {
-          name: 'jeniskelamin',
-          required: true,
-          label: 'jenis kelamin',
-          align: 'left',
-          field: row => row.jeniskelamin,
-          format: val => `${val}`,
-          sortable: true,
-          classes: 'bg-grey-2 ellipsis',
-          style: 'max-width: 100px'
-        },
-        {
-          name: 'status',
-          required: true,
-          label: 'status',
-          align: 'left',
-          field: row => row.status,
-          format: val => `${val}`,
-          sortable: true,
-          classes: 'bg-grey-2 ellipsis',
-          style: 'max-width: 100px'
-        },
-        {
-          name: 'tanggallahir',
-          required: true,
-          label: 'tangga lahir',
-          align: 'left',
-          field: row => row.tanggallahir,
-          format: val => `${val}`,
-          sortable: true,
-          classes: 'bg-grey-2 ellipsis',
-          style: 'max-width: 100px'
-        }
-        
-       
-         ],
+      
       employees: [ ]
     }
   },
@@ -72,7 +81,28 @@ export default {
   methods: {
       navigate(){
           this.$router.push('/tambahemployee')
-      }
+      },
+      onDelete(id){
+      
+      tabele.deleteAdmin(window, id)
+      .then((res)=>{
+                //  this.posts = res.data;
+        tabele.getemployee(window)
+        .then((res)=>{
+               this.employees=res.data
+               this.$router.go('/tabel')
+           })
+           .catch(()=>{
+               alert('Error load data');
+           })
+        
+      })
+      .catch(()=>{
+        alert('Error load data');
+      })
+      console.log("delete called");
+    }
+    
   },
  
   beforeCreate()

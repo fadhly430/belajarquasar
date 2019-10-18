@@ -738,7 +738,7 @@ export default {
   methods : {
 
     navigate() {
-      this.$router.push('/tabel')
+      this.$router.push('/tabel2')
     },
 
     

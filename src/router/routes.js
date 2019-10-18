@@ -11,7 +11,8 @@ const routes = [
       { path: 'inputusers', component: () => import('pages/inputusers.vue') },
       { path: 'users', component: () => import('pages/users.vue') },
       { path: 'video', component: () => import('pages/video.vue') },
-      { path: 'tabel', component: () => import('pages/tabel.vue') }
+      { path: 'tabel', component: () => import('pages/tabel.vue') },
+      { path: 'tabel2', component: () => import('pages/tabel2.vue') }
      
     ]
   }
