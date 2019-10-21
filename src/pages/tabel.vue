@@ -1,6 +1,10 @@
 <template>
   <div class="q-pa-md">
+       <div class="row">
+        <div class="col" style="align : center">
       <q-btn label="TAMBAH PESERTA" color="primary" @click="navigate()" />
+
+      
     
    <q-list bordered class="rounded-borders" style="max-width: 600px" >
       <q-item-label header>Google Inbox style</q-item-label>
@@ -64,6 +68,8 @@
       </q-item>
     </q-list>
   </div>
+</div>
+</div>
 
   
 </template>
@@ -73,6 +79,8 @@ import tabele from '../api/get/index'
 export default {
   data () {
     return {
+
+      
       
       employees: [ ]
     }
@@ -84,7 +92,7 @@ export default {
       },
       onDelete(id){
       
-      tabele.deleteAdmin(window, id)
+      tabele.deleteEmployee(window, id)
       .then((res)=>{
                 //  this.posts = res.data;
         tabele.getemployee(window)
@@ -101,7 +109,20 @@ export default {
         alert('Error load data');
       })
       console.log("delete called");
-    }
+    },
+
+
+       // method untuk Tambah data
+        onSubmit() {
+            const self = this
+            admins.postAdmin(window, self.form.username, self.form.password)
+                .then(function (result) {
+                    self.$router.go('/admin')
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+            },
     
   },
  
