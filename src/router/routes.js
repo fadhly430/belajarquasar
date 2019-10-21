@@ -12,7 +12,8 @@ const routes = [
       { path: 'users', component: () => import('pages/users.vue') },
       { path: 'video', component: () => import('pages/video.vue') },
       { path: 'tabel', component: () => import('pages/tabel.vue') },
-      { path: 'tabel2', component: () => import('pages/tabel2.vue') }
+      { path: 'tabel2', component: () => import('pages/tabel2.vue') },
+      { path: 'update', component: () => import('pages/update.vue') }
      
     ]
   }

@@ -93,7 +93,7 @@ export default {
 
     })
     .then(function (response) {
-      return  self.$router.push('/tambahemployee')
+      return  self.$router.push('/tabel2')
          
     })
     .catch(function (error) {

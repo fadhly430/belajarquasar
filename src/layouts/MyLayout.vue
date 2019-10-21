@@ -751,7 +751,7 @@ export default {
     },
 
     navigate1() {
-      this.$router.push('/tabel')
+      this.$router.push('/update')
     },
 
     
