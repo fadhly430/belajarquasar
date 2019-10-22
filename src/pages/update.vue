@@ -150,7 +150,7 @@ export default {
                         admins.getemployee(window)
                             .then((res) => {
                                 this.employees = res.data
-                                this.$router.go('/admin')
+                                this.$router.go('/update')
                             })
                             .catch(() => {
                                 alert('Error load data');
